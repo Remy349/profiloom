@@ -1,9 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
 import { cn } from "@/lib/utils";
-
-const outfit = Outfit({subsets:['latin'],variable:'--font-sans'});
+import { outfit } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -18,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", outfit.variable)}>
-      <body className={`antialiased`}>{children}</body>
+    <html lang="en" className={cn("font-sans antialiased", outfit.variable)}>
+      <body>{children}</body>
     </html>
   );
 }
