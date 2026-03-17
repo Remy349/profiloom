@@ -21,7 +21,7 @@ export function Hero() {
         </div>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Button size="lg" asChild>
-            <Link href="/templates">Get started</Link>
+            <Link href="/auth/signin">Get started</Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
             <Link href="https://github.com/Remy349/profiloom" target="_blank">
