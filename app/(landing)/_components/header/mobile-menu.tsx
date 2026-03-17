@@ -1,0 +1,51 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import { links } from "./header";
+import Link from "next/link";
+import { useState } from "react";
+import type { Route } from "next";
+
+export function MobileMenu() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger asChild>
+        <Button size="icon-lg" className="md:hidden" variant="ghost">
+          <Menu />
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="right">
+        <SheetHeader>
+          <SheetTitle></SheetTitle>
+          <SheetDescription></SheetDescription>
+        </SheetHeader>
+        <div className="pt-6">
+          <ul className="flex items-center flex-col gap-y-6">
+            {links.map((item) => (
+              <li key={item.name}>
+                <Link
+                  className="font-medium"
+                  href={item.href as Route}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </SheetContent>
+    </Sheet>
+  );
+}
