@@ -13,7 +13,7 @@ export function Hero() {
           <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
             Craft a GitHub profile that feels uniquely yours
           </h1>
-          <p className="text-pretty text-base text-muted-foreground sm:text-lg">
+          <p className="text-pretty text-sm text-muted-foreground sm:text-base">
             Profiloom helps developers create, customize, and share polished
             GitHub profile READMEs through reusable templates and a community
             gallery.
